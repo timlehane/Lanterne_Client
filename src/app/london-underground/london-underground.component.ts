@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LineService } from '../services/line.service';
+import { Line } from '../models/line';
+
 @Component({
   selector: 'app-london-underground',
   templateUrl: './london-underground.component.html',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LondonUndergroundComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private lineService: LineService
+  ) {
+  }
+
+
+  lines!: Line[];
 
   ngOnInit(): void {
+    this.lineService.getAll().subscribe((data: any)=>{
+      console.log(data);
+
+      this.lines = data;
+      
+    })  
+
   }
 
 }
