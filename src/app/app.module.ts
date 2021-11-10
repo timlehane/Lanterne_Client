@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LondonUndergroundComponent } from './london-underground/london-underground.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LondonUndergroundComponent
   ],
   imports: [
     BrowserModule,
